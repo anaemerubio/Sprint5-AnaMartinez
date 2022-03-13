@@ -19,3 +19,6 @@ async function getJoke(API_URL) {
 
     console.log(jokeJson.joke);
 }
+
+// Exercice 1
+

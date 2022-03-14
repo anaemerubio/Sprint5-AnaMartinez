@@ -16,18 +16,27 @@
 </head>
 <body>
     
-    <div class="container-fluid align-items-center">
-        <div class="row d-flex justify-content-center align-items-center pt-5">
-            <h1>Do you want to hear a joke?</h1>
+    <div class="container align-items-center pt-5">
+        <div class="row bg-light">
+            <div class="col-12 d-flex justify-content-center align-items-center p-5">
+                <h1>DO YOU WANT TO HEAR A JOKE?</h1>
+            </div>
+            <div class="col-12 d-flex justify-content-center align-items-center p-5">
+                <h4 id="printJoke" class="text-center"></h4>
+            </div>
+            <div class="col-12 d-flex justify-content-center align-items-center p-2">
+                <button onclick="scoreJoke(1)" class="btn btn-danger btn-lg mx-3 px-4">1</button>
+                <button onclick="scoreJoke(2)" class="btn btn-danger btn-lg mx-3 px-4">2</button>
+                <button onclick="scoreJoke(3)" class="btn btn-danger btn-lg mx-3 px-4">3</button>
+            </div>
+            <div class="col-12 d-flex justify-content-center align-items-center p-5">
+                <button id="jokeButton" class="btn btn-primary btn-lg px-5">TELL ME A JOKE</button>
+            </div>
         </div>
-        <div class="row d-flex justify-content-center align-items-center pt-5">
-            <button id="jokeButton" class="btn btn-primary btn-lg px-5">TELL ME A JOKE</button>
-        </div>
-        <div id="printJoke" class="row d-flex justify-content-center align-items-center pt-5"></div>
     </div>
 
-<!--Javascript-->
-<script src="/scripts/index.js"></script>
+    <!--Javascript-->
+    <script src="/scripts/index.js"></script>
 
 </body>
 </html>

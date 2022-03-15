@@ -1,12 +1,9 @@
 // URL API bromas
 const API_URL = "https://icanhazdadjoke.com";
-
 // API meteo
-const API_METEO = 'https://api.openweathermap.org/data/2.5/weather?q=barcelona,es&lang=es&units=metric&appid=a0e6ac9e92dc18ce3cd493de048052d5';
-
+const API_METEO = 'https://api.openweathermap.org/data/2.5/weather?q=barcelona,es&lang=en&units=metric&appid=b3da016d9d44d0dbc6cae5783b7e3f8a';
 // link p HTML para mostrar por pantalla
 const $SHOW_METEO = document.querySelector("#showMeteo");
-
 // Pulsar boton
 const $JOKE_BUTTON = document.querySelector("#jokeButton");
 // Enseñar por pantalla
@@ -14,12 +11,13 @@ const $PRINT_JOKE = document.querySelector("#printJoke");
 // Array puntuacion usuario
 let reportJoke = [];
 
-// Que cuando hagan click se llame a la API
+// Cuando hagan click se llame a la API dadjokes
 $JOKE_BUTTON.addEventListener("click", () => getJoke(API_URL));
 
+// Cuando se cargue la página llama a la API meteorologica
 window.addEventListener("load", () => {getMeteo(API_METEO); });
 
-// Llamar API y mostrar por consola y pantalla (Ej1 y 2)
+// Llamada de API dadjokes (Ej 1 y 2) https://stackoverflow.com/questions/36975619/how-to-call-a-rest-web-service-api-from-javascript
 async function getJoke(API_URL) {
   let joke = await fetch(API_URL, {
       headers: {
@@ -27,11 +25,9 @@ async function getJoke(API_URL) {
       }
   });
 
-  let jokeJson = await joke.json(); //https://stackoverflow.com/questions/36975619/how-to-call-a-rest-web-service-api-from-javascript
+  let jokeJson = await joke.json();
 
-  // Enseñar en consola
   console.log(jokeJson.joke);
-  // Enseñar usuario
   $PRINT_JOKE.innerHTML = jokeJson.joke;
 }
 
@@ -47,7 +43,7 @@ function scoreJoke(score) {
   console.log(reportJoke);
 }
 
-// pillar API meteo (Ej4) https://openweathermap.org/current#geo
+// Llamar API meteo (Ej4) https://openweathermap.org/current#geo
 async function getMeteo() {
   const meteo = await fetch(API_METEO, {
     method: "GET",
@@ -59,9 +55,8 @@ async function getMeteo() {
   let place = meteoJSON.name;
   let weatherDescription = meteoJSON.weather[0].description;
   let currrentTemp = meteoJSON.main.temp;
-  let weather = `Hoy en ${place}: ${currrentTemp} ºC y ${weatherDescription}.`;
+  let weather = `The weather in ${place} is: ${currrentTemp} ºC with ${weatherDescription}.`;
 
-  // Enseñar por consola y al usuario
   console.log(weather);
   $SHOW_METEO.innerHTML = weather;
 }

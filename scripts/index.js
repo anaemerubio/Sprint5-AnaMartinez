@@ -12,7 +12,6 @@ const $JOKE_BUTTON = document.querySelector("#jokeButton");
 const $PRINT_JOKE = document.querySelector("#printJoke");
 // Array puntuacion usuario
 let reportJoke = [];
-
 // Cuando hagan click muestra la broma de la API (Ahora random)
 /* $JOKE_BUTTON.addEventListener("click", () => getJoke(API_DAD_JOKES)); */
 /* $JOKE_BUTTON.addEventListener("click", () => getChuckNorrisJoke(API_CHUCK_NORRIS)); */
@@ -29,9 +28,7 @@ async function getJoke(API_DAD_JOKES) {
         Accept: "application/json"
       }
   });
-
   let jokeJson = await joke.json();
-
   console.log(jokeJson.joke);
   $PRINT_JOKE.innerHTML = jokeJson.joke;
 }
@@ -42,9 +39,7 @@ function scoreJoke(score) {
   userPuntuation.joke = document.getElementById("printJoke").innerHTML;
   userPuntuation.score = score;
   userPuntuation.date = new Date();
-
   reportJoke.push(userPuntuation);
-
   console.log(reportJoke);
 }
 
@@ -61,7 +56,6 @@ async function getMeteo() {
   let weatherDescription = meteoJSON.weather[0].description;
   let currrentTemp = meteoJSON.main.temp;
   let weather = `The weather in ${place} is: ${currrentTemp} ºC with ${weatherDescription}.`;
-
   console.log(weather);
   $SHOW_METEO.innerHTML = weather;
 }
@@ -70,7 +64,6 @@ async function getMeteo() {
 async function getChuckNorrisJoke(API_CHUCK_NORRIS) {
   let jokeChuck = await fetch(API_CHUCK_NORRIS);
   let jokeChuckJSON = await jokeChuck.json();
-
   console.log(jokeChuckJSON.value);
   $PRINT_JOKE.innerHTML = `${jokeChuckJSON.value}`;
 }

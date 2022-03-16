@@ -1,4 +1,31 @@
 body{
+    color: black
+}
+
+#jokeButton{
+    border-radius: 32px;
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+    padding: 1em;
+    border: 4px solid black;
+}
+
+#printJoke{
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#mainContainer{
     height: 920px;
-    background-color: lightsteelblue;
+    width: auto;
+    background-image: url(/img/bg-img-1.svg);
+    background-repeat: none;
+    background-size: 1400px 1400px;
+    background-position: center;
+}
+
+#mainRow{
+    margin-top: 200px;
 }

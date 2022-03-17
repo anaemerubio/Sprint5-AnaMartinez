@@ -15,24 +15,23 @@
     <title>Sprint 5</title>
 </head>
 <body>
-    
-    <div class="container align-items-center pt-5">
-        <div class="row bg-light">
-            <div class="col-12 d-flex justify-content-center align-items-center p-5">
+    <div class="container pt-5" id="mainContainer">
+        <div class="row" id="mainRow">
+            <div class="col-12 text-center p-4">
                 <h1>DO YOU WANT TO HEAR A JOKE?</h1>
             </div>
-            <div class="col-12 d-flex justify-content-center align-items-center p-5">
-                <h4 id="printJoke" class="text-center"></h4>
+            <div class="col-12 text-center p-4">
+                <p id="printJoke" class="text-center"></p>
             </div>
-            <div class="col-12 d-flex justify-content-center align-items-center p-2">
-                <button onclick="scoreJoke(1)" class="btn btn-danger btn-lg mx-3 px-4">1</button>
-                <button onclick="scoreJoke(2)" class="btn btn-danger btn-lg mx-3 px-4">2</button>
-                <button onclick="scoreJoke(3)" class="btn btn-danger btn-lg mx-3 px-4">3</button>
+            <div class="col-12 text-center p-4">
+                <button class="btn btn-primary-outline" onclick="scoreJoke(1)"><img src="/img/dislike.svg" width="50" height="50"></button>
+                <button class="btn btn-primary-outline" onclick="scoreJoke(2)"><img src="/img/neutral.svg" width="50" height="50"></button>
+                <button class="btn btn-primary-outline" onclick="scoreJoke(3)"><img src="/img/like.svg" width="50" height="50"></button>
             </div>
-            <div class="col-12 d-flex justify-content-center align-items-center p-5">
-                <button id="jokeButton" class="btn btn-primary btn-lg px-5">TELL ME A JOKE</button>
+            <div class="col-12 text-center p-4">
+                <button id="jokeButton" class="btn btn-warning px-5">TELL ME A JOKE</button>
             </div>
-            <div class="col-12 d-flex justify-content-center align-items-center p-5">
+            <div class="col-12 text-center p-4">
                 <p id="showMeteo" class="text-center"></p>
             </div>
         </div>
@@ -40,6 +39,5 @@
 
     <!--Javascript-->
     <script src="/scripts/index.js"></script>
-
 </body>
 </html>
